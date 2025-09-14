@@ -7,4 +7,4 @@ date > "$LOG_FILE"
 echo "--- Starting application ---" >> "$LOG_FILE"
 
 # Run the Python script and append stdout/stderr to the log file
-/Library/Frameworks/Python.framework/Versions/3.11/bin/python3 "$DIR/yt_downloader_gui.py" >> "$LOG_FILE" 2>&1
+/opt/homebrew/bin/python3 "$DIR/yt_downloader_gui.py" >> "$LOG_FILE" 2>&1

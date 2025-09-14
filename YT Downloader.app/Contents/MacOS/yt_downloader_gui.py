@@ -30,16 +30,15 @@ def run_yt_dlp(url):
         downloads_path = os.path.join(os.path.expanduser("~"), "Downloads")
         
         # Comando para yt-dlp
-        # -o: Define o template do nome do arquivo de saída para a pasta Downloads
-        # --recode-video mp4: Garante a compatibilidade com QuickTime
+        # -f: Define o formato de download. Tenta o melhor vídeo mp4 com o melhor áudio m4a,
+        #     depois o melhor formato mp4 e, finalmente, o melhor formato disponível.
         # --progress: Envia o progresso como JSON
         # --no-warnings: Limpa a saída
         command = [
             "/opt/homebrew/opt/yt-dlp/bin/yt-dlp",
-            "-f", "bestvideo+bestaudio", # Baixa a melhor qualidade de vídeo e áudio separadamente
+            "-f", "bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best",
             "--ffmpeg-location", "/opt/homebrew/bin/ffmpeg", # Caminho explícito para o ffmpeg
             "-o", f"{downloads_path}/%(title)s.%(ext)s",
-            "--recode-video", "mp4",
             "--progress",
             "--no-warnings"
         ]
