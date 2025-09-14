@@ -4,6 +4,21 @@ import subprocess
 import threading
 import json
 import os
+import sys
+
+# --- Determina os caminhos dos recursos ---
+# No ambiente de desenvolvimento, os executáveis podem estar em outro lugar.
+# Dentro do app py2app, eles estão na pasta Resources.
+if hasattr(sys, 'frozen'):
+    # Estamos em um bundle py2app
+    RESOURCES_PATH = os.path.join(os.path.dirname(sys.executable), '..', 'Resources')
+else:
+    # Ambiente de desenvolvimento
+    RESOURCES_PATH = "/opt/homebrew/bin" # Ou onde quer que eles estejam
+
+YT_DLP_PATH = os.path.join(RESOURCES_PATH, "yt-dlp")
+FFMPEG_PATH = os.path.join(RESOURCES_PATH, "ffmpeg")
+
 
 def open_file_in_finder(path):
     """Abre o arquivo no Finder, selecionando-o."""
@@ -35,9 +50,9 @@ def run_yt_dlp(url):
         # --progress: Envia o progresso como JSON
         # --no-warnings: Limpa a saída
         command = [
-            "/opt/homebrew/opt/yt-dlp/bin/yt-dlp",
+            YT_DLP_PATH,
             "-f", "bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best",
-            "--ffmpeg-location", "/opt/homebrew/bin/ffmpeg", # Caminho explícito para o ffmpeg
+            "--ffmpeg-location", FFMPEG_PATH,
             "-o", f"{downloads_path}/%(title)s.%(ext)s",
             "--progress",
             "--no-warnings"

@@ -10,7 +10,7 @@ import os
 
 # --- Configurações Principais ---
 APP_NAME = "YT Downloader"
-APP_SCRIPT = "YT Downloader.app/Contents/MacOS/yt_downloader_gui.py"
+APP_SCRIPT = "yt_downloader_gui.py"
 APP_VERSION = "1.2.0"
 
 # --- Caminhos para os Binários ---
