@@ -4,26 +4,31 @@ Este é um aplicativo de desktop para macOS que permite baixar vídeos do YouTub
 
 ## Como Usar
 
-Este aplicativo é **autocontido**, o que significa que ele não requer nenhuma instalação manual de dependências como Python, `yt-dlp` ou `ffmpeg`.
+Este aplicativo é **autocontido**, o que significa que ele não requer nenhuma instalação manual de dependências. Siga os passos abaixo para instalar e rodar.
 
-1.  **Baixe o Aplicativo**:
-    Vá para a [página de Releases](https://github.com/vagnersantosaraujo/yt-downloader-app/releases) e baixe o arquivo `YT-Downloader.app.zip` da versão mais recente.
+### 1. Baixe o Aplicativo
+Vá para a [página de Releases](https://github.com/vagnersantosaraujo/yt-downloader-app/releases) e baixe o arquivo `YT-Downloader.app.zip` da versão mais recente.
 
-2.  **Descompacte o Arquivo**:
-    Encontre o arquivo `.zip` na sua pasta de Downloads e dê um duplo clique para descompactá-lo.
+### 2. Descompacte e Mova
+- Encontre o arquivo `.zip` na sua pasta de Downloads e dê um duplo clique para descompactá-lo.
+- Arraste o `YT Downloader.app` para a sua pasta de **Aplicativos**.
 
-3.  **Abra o Aplicativo pela Primeira Vez**:
-    Arraste o `YT Downloader.app` para a sua pasta de Aplicativos. Devido às políticas de segurança do macOS para aplicativos não registrados na Apple Store, você precisará seguir estes passos na primeira execução:
-    - **Clique com o botão direito** no ícone do `YT Downloader.app`.
-    - No menu de contexto, selecione **"Abrir"**.
-    - Uma janela de aviso aparecerá. Clique no botão **"Abrir"** novamente para confirmar.
+### 3. Autorize a Execução (Apenas na Primeira Vez)
+O macOS possui um sistema de segurança chamado Gatekeeper que bloqueia aplicativos de desenvolvedores não identificados. Para autorizar o YT Downloader, siga estes passos:
 
-    Fazendo isso, você cria uma exceção de segurança para o aplicativo, e nas próximas vezes, poderá abri-lo normalmente com um duplo clique.
+1.  **Tente abrir o aplicativo** dando um duplo clique. Você verá um alerta dizendo que a Apple não pôde verificar o app. Clique em **OK**.
+2.  Abra os **Ajustes do Sistema**.
+3.  Vá para **Privacidade e Segurança**.
+4.  Role para baixo até a seção "Segurança". Você verá uma mensagem informando que o "YT Downloader.app" foi bloqueado.
+5.  Clique no botão **"Abrir Mesmo Assim"** ao lado da mensagem.
+6.  Confirme sua identidade com sua senha ou Touch ID.
 
-4.  **Baixe Vídeos**:
-    - Cole a URL de um vídeo do YouTube no campo de texto.
-    - Clique no botão "Baixar Vídeo".
-    - O vídeo será salvo na sua pasta `~/Downloads`.
+O aplicativo irá abrir, e o macOS não perguntará novamente.
+
+### 4. Baixe Vídeos
+- Cole a URL de um vídeo do YouTube no campo de texto.
+- Clique no botão "Baixar Vídeo".
+- O vídeo será salvo na sua pasta `~/Downloads`.
 
 ## Desenvolvimento
 
