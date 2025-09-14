@@ -12,9 +12,13 @@ Este aplicativo é **autocontido**, o que significa que ele não requer nenhuma 
 2.  **Descompacte o Arquivo**:
     Encontre o arquivo `.zip` na sua pasta de Downloads e dê um duplo clique para descompactá-lo.
 
-3.  **Execute o Aplicativo**:
-    Arraste o `YT Downloader.app` para a sua pasta de Aplicativos e dê um duplo clique para abri-lo.
-    *Nota de Segurança do macOS: Na primeira vez que abrir, o macOS pode exibir um aviso de segurança. Se isso acontecer, clique com o botão direito no aplicativo, selecione "Abrir" e confirme a sua intenção.*
+3.  **Abra o Aplicativo pela Primeira Vez**:
+    Arraste o `YT Downloader.app` para a sua pasta de Aplicativos. Devido às políticas de segurança do macOS para aplicativos não registrados na Apple Store, você precisará seguir estes passos na primeira execução:
+    - **Clique com o botão direito** no ícone do `YT Downloader.app`.
+    - No menu de contexto, selecione **"Abrir"**.
+    - Uma janela de aviso aparecerá. Clique no botão **"Abrir"** novamente para confirmar.
+
+    Fazendo isso, você cria uma exceção de segurança para o aplicativo, e nas próximas vezes, poderá abri-lo normalmente com um duplo clique.
 
 4.  **Baixe Vídeos**:
     - Cole a URL de um vídeo do YouTube no campo de texto.
