@@ -1,15 +1,3 @@
-# macOS
 .DS_Store
-
-# Python
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
-.Python
-
-# Logs
-*.log
-
-# yt-dlp cache
-.yt-dlp-cache
+app_log.txt
+venv/
