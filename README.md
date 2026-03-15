@@ -97,6 +97,8 @@ git push origin v1.3.1
 - **Barra de progresso corrigida** — o código anterior tentava parsear stdout como JSON (nunca funcionou). Substituído por leitura linha a linha com `--newline` e regex em cima das linhas `[download] XX.X%`.
 - **CI/CD com GitHub Actions** — build e publicação de releases automáticos ao criar uma tag `v*.*.*`.
 
+> Obrigado @brunoteixeiralc pelas contribuições nesta versão!
+
 ### v1.1.0
 - Empacotamento inicial com `py2app`.
 - Interface gráfica com Tkinter.
