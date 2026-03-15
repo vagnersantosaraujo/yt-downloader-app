@@ -83,15 +83,15 @@ O workflow `.github/workflows/build.yml` é disparado automaticamente ao criar u
 Para criar um release:
 
 ```bash
-git tag v1.3.1
-git push origin v1.3.1
+git tag v1.3.2
+git push origin v1.3.2
 ```
 
 ---
 
 ## Histórico de Mudanças
 
-### v1.3.1
+### v1.3.2
 - **Migração de `py2app` para PyInstaller** — empacotamento mais confiável e portável; resolve erros de dependência (`jaraco.text`, Tcl/Tk) que impediam a execução em outras máquinas.
 - **Correção do erro HTTP 403** — o YouTube passou a bloquear streams mp4 separados via protocolo SABR. Corrigido usando `--extractor-args youtube:player_client=android,web` e seleção de formato sem restrição de extensão.
 - **Barra de progresso corrigida** — o código anterior tentava parsear stdout como JSON (nunca funcionou). Substituído por leitura linha a linha com `--newline` e regex em cima das linhas `[download] XX.X%`.
