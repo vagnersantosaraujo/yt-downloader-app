@@ -8,15 +8,8 @@ on:
 
 jobs:
   build:
-    name: Build (${{ matrix.arch }})
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        include:
-          - os: macos-latest
-            arch: arm64
-          - os: macos-12
-            arch: x86_64
+    name: Build (arm64)
+    runs-on: macos-latest
 
     steps:
       - name: Checkout
@@ -47,13 +40,13 @@ jobs:
       - name: Package .app into zip
         run: |
           cd dist
-          zip -r "../YT-Downloader-macOS-${{ matrix.arch }}.zip" "YT Downloader.app"
+          zip -r "../YT-Downloader-macOS-arm64.zip" "YT Downloader.app"
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: YT-Downloader-macOS-${{ matrix.arch }}
-          path: YT-Downloader-macOS-${{ matrix.arch }}.zip
+          name: YT-Downloader-macOS-arm64
+          path: YT-Downloader-macOS-arm64.zip
 
   release:
     name: Create GitHub Release
@@ -67,15 +60,9 @@ jobs:
         with:
           name: YT-Downloader-macOS-arm64
 
-      - name: Download x86_64 artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: YT-Downloader-macOS-x86_64
-
       - name: Create Release
         uses: softprops/action-gh-release@v2
         with:
           files: |
             YT-Downloader-macOS-arm64.zip
-            YT-Downloader-macOS-x86_64.zip
           generate_release_notes: true
